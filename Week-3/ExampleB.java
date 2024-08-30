@@ -2,15 +2,18 @@ class Student{
     private String name;
     private float gpa;
     private int id;
+    private static int counter = 854354;
 
     public Student(){
         this.name = "John";
         this.gpa = 4.0f;
+        id = counter++;
     }
 
     public Student(String name, float gpa){
         this.name = name;
         this.gpa = gpa;
+        id = counter++;
     }
 
     public String getName(){
@@ -29,6 +32,7 @@ class Student{
     public void setGPA(float gpa){
         this.gpa = gpa;
     }
+
     
 }
 
@@ -46,6 +50,8 @@ public class ExampleB {
         return res;
     }
     public static void main(String[] args) {
-        
+        for(Student s : fillStudents()){
+            System.out.println(s.getName() + " " + s.getGPA() + " ID: " + s.getID());
+        }
     }
 }
