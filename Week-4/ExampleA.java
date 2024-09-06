@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 class Student {
     private String name;
@@ -72,23 +73,36 @@ public class ExampleA {
 
     public static void main(String[] args) {
         // Initialize ArrayList
-
+        ArrayList<Student> ListOfStudents = new ArrayList<>();
         // Add to ArrayList
+        // ListOfStudents.add(new Student("Eun Sik", 2.0f));
 
-        // Add by index
+        fillStudents(ListOfStudents);
+
+        ListOfStudents.add(2, new Student("Eun Sik", 2.0f));
 
         // Read item in ArrayList
+        System.out.println(ListOfStudents.get(2));
 
         // Edit item in ArrayList
+        ListOfStudents.get(2).setGPA(4.0f);
 
         // Remove by object
+        ListOfStudents.remove(ListOfStudents.get(2));
 
-        // // Remove by index
+        // Remove by index
+        ListOfStudents.remove(2);
 
         // Other useful ArrayList functions:
         // size()
+        System.out.println(ListOfStudents.size());
 
         // isEmpty()
+        if (ListOfStudents.isEmpty()) {
+            System.out.println("List is empty");
+        } else {
+            System.out.println("List is not empty");
+        }
 
     }
 }
